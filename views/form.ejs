@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/formStyle.css">
     <title>Add Message</title>
 </head>
 <body>
     <header class="header">
-        <a>Home</a>
-        <a>Add Message</a>
+        <a href="/">
+            <button class="nav-btn">Home</button> 
+        </a>
+        <a href="/newMessage">
+            <button class="nav-btn">Add Message</button> 
+        </a>
+        <a href="/search">
+            <button class="nav-btn">Search User Message</button> 
+        </a>
+        
     </header>
     
     <div class="form-container">
@@ -31,13 +40,7 @@
         <% } %>
     </div>
 
-    <div class="modal hide">
-        <p classs="confirm-message">Are you sure you want to add this message?</p>
-        <div class="confirm-button-container">
-            <button class="modal-btn" id="yesConfirm">Yes</button>
-            <button class="modal-btn" id="noConfirm">No</button>
-        </div>
-    </div>
+    
    
 </body>
 </html>
