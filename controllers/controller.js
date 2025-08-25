@@ -2,20 +2,25 @@ const {getAllMessages,getMessageByUsername,addMessage} = require('../model/mock_
 
 async function getMessages(req,res){
     const allMessages = await getAllMessages();
-    res.render('index',allMessages);
+    if(!allMessages.isSucess){
+        res.render('index',{error:allMessages.error,messageTexts:allMessages.messages})
+    }
+    res.render('index',{error:null,messageTexts:allMessages.messages});
 }
 
 async function getMessageByuser(req,res){
     const username = req.query.username;
-    let user = null;
     if(username){
-        user = await getMessageByUsername(username);
-        if ("error" in user){
-            user = null
+        const user = await getMessageByUsername(username);
+        if(!user.isSucess){
+            res.render('search',{error:user.error})
         }
+        res.render('search',{error:null,user:user})
     }
+    res.render('search',{error:null})
 
-    res.render('search',user)
+    res.ren
+
     
     
 }
@@ -25,17 +30,17 @@ async function AddMessage(req,res){
     const username = req.body.username;
     const saved = await addMessage(messageContent,username);
     
-    if(!saved.isSaved){
+    if(!saved.isSucess){
 
-        res.status(500).render('form',saved.message)
+        res.status(501).render('form',{error:saved.error})
     }
-    res.render('index',saved.messages)
+    res.render('index',{error:null,messageTexts:saved.messages})
 
 }
 
-function getForm(){
+function getForm(req,res){
     try{
-        res.render('form')
+        res.render('form',{error:null})
     }catch(error){
         res.status(404).send("<h1>File not found</h1>")
     }

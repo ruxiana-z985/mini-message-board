@@ -52,17 +52,22 @@ const messages = [
 ]
 
 async function getAllMessages(){
-    return messages;
+   if(!messages){
+    return {isSucess:false,error:"messages not found"}
+   }
+   return {isSucess:true,messages:messages}
 }
+
+
 
 async function getMessageByUsername(username){
   const user = messages.filter(function(element){
      return element.user == this.username;
   },username)
   if(!user){
-    return {error:"user not in database"}
+    return {isSucess:false,error:"user not in database"}
   }
-  return user
+  return {isSucess:true,user:user}
 }
 
 async function addMessage(text,user){
@@ -70,10 +75,10 @@ async function addMessage(text,user){
     try{
         let dateAdded = new Date();
         messages.push({text,user,dateAdded})
-        return {isSaved:true,messages:messages,message:"successfully saved"}
+        return {isSucess:true,error:null}
     }catch(error){
         console.log("error in database",error)
-        return {message:"datbase error",isSaved:false,messages:messages}
+        return {isSucess:false,error:"Couldn't add message!"}
     }
    
 }

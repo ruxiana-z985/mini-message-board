@@ -9,3 +9,9 @@ formRouter.use(static(assetPath))
 
 formRouter.get('/',getForm);
 formRouter.post('/',AddMessage);
+
+formRouter.use((req,res)=>{
+    res.status(404).send("<h1>Page not found!</h1>")
+})
+
+module.exports = formRouter;

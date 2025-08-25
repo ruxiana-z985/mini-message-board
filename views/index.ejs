@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/homeStyle.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <header class="header">
+        <a>Home</a>
+        <a>Add Message</a>
+    </header>
+    <div id="messageContainer">
+        <% if(!error){%>
+            <% for(let i = 0; i<messageTexts.length;i++) { %>
+                <div class="message">
+                    <h3><%= messageTexts[i].user %></h3>
+                    <p><%= messageTexts[i].text %></p>
+                    <p><%= messageTexts[i].dateAdded %></p>
+                </div>
+            <% } %>
+        <%} %>
+    </div>
+
+    <div id="error-container">
+
+    </div>
+</body>
+</html>

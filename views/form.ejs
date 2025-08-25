@@ -6,8 +6,13 @@
     <title>Add Message</title>
 </head>
 <body>
+    <header class="header">
+        <a>Home</a>
+        <a>Add Message</a>
+    </header>
+    
     <div class="form-container">
-        <form id="newMessageForm" action="/newMessage" method="POST">
+        <form id="newMessageForm" action="" method="POST">
         <label for = "username">Username:</label>
         <input type="text" id="username" name="username" required>
 
@@ -19,8 +24,11 @@
     </div>
 
     <div id="error-container">
-        
-
+        <% if(error) { %>
+            <div class = "modal err-modal">
+                <%= error %>
+            </div>
+        <% } %>
     </div>
 
     <div class="modal hide">

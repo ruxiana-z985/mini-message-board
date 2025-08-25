@@ -1,0 +1,26 @@
+body{
+    background-image: url('../images/vecteezy_realistic-detailed-chalkboard-texture-background_12184532.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height:20vh;
+    width: 50vw;
+}
+
+#messageContainer{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap:6px;
+    padding:5px ;
+    height:80vh;
+    width: 100vw;
+}
+
+.message{
+    color:white;
+    font-weight: bold;
+}
