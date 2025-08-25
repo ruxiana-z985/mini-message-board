@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Message</title>
+</head>
+<body>
+    <div class="form-container">
+        <form id="newMessageForm" action="/newMessage" method="POST">
+        <label for = "username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="messageText">Message:</label>
+        <textarea id="messageText" name="messageContent" required></textarea>
+
+        <button id="submitBtn" type="submit">Add Message</button>
+    </form>
+    </div>
+
+    <div id="error-container">
+        
+
+    </div>
+
+    <div class="modal hide">
+        <p classs="confirm-message">Are you sure you want to add this message?</p>
+        <div class="confirm-button-container">
+            <button class="modal-btn" id="yesConfirm">Yes</button>
+            <button class="modal-btn" id="noConfirm">No</button>
+        </div>
+    </div>
+   
+</body>
+</html>
