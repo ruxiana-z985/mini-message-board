@@ -18,7 +18,7 @@ Frontend: HTML, CSS, JavaScript
 
 Templating: EJS
 
-Deployment: (e.g., Heroku, Render, etc.) 🌐
+Deployment: Railway
 
 🔗 Live Preview
 [https://web-production-ffcd.up.railway.app/]
