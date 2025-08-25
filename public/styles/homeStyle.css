@@ -1,26 +1,89 @@
+@font-face {
+    font-family: "KG Broken Vessels Sketch";
+    src: url('../fonts/KGBrokenVesselsSketch.ttf');
+}
+html,body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 2px; 
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 1px;
+}
 body{
     background-image: url('../images/vecteezy_realistic-detailed-chalkboard-texture-background_12184532.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 10px groove #393535;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 .header{
     height:20vh;
     width: 50vw;
+    color: white;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin:auto;
+
+
+}
+
+.nav-btn{
+    height: 50px;
+    width:120px;
+    background-color: gray;
+    color: whitesmoke;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px black;
 }
 
 #messageContainer{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap:6px;
+    grid-gap:25px;
     padding:5px ;
     height:80vh;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .message{
-    color:white;
-    font-weight: bold;
+    background-image: url('../images/chalkboard-1337809_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid whitesmoke;
+    font-family: 'KG Broken Vessels Sketch';
+    box-shadow: 5px 5px 10px black;
+    height:200px;
 }

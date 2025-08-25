@@ -13,13 +13,17 @@ async function getMessageByuser(req,res){
     if(username){
         const user = await getMessageByUsername(username);
         if(!user.isSucess){
-            res.render('search',{error:user.error})
+            res.render('search',{error:user.error,user:[]})
         }
-        res.render('search',{error:null,user:user})
+        else{
+            res.render('search',{error:null,user:user.user})
+        }
+        
     }
-    res.render('search',{error:null})
-
-    res.ren
+    else{
+        res.render('search',{error:null,user:[]})
+    }
+   
 
     
     
@@ -34,7 +38,7 @@ async function AddMessage(req,res){
 
         res.status(501).render('form',{error:saved.error})
     }
-    res.render('index',{error:null,messageTexts:saved.messages})
+    res.redirect('/');
 
 }
 

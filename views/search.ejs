@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Page</title>
 </head>
 <body>
     
+    <div class="form-container">
+        <form id="form" method="GET">
+            <input type="text" name="username" placeholder="Bob..">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    
+
+    <div class="search-value-container">
+        <% if(error){ %>
+        <div class="error-message">
+            <%= error %>
+        </div>
+    <% } else{ %>
+        <% for(let i = 0; i<user.length; i++){ %>
+            <div class="user-info">
+                <h3><%= user[i].user %></h3>
+                <p><%= user[i].text %></p>
+                <p><%= user[i].dateAdded %></p>
+            </div>
+        <% } %>
+    <% } %>
+    </div>
+   
+
 </body>
 </html>

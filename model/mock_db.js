@@ -62,13 +62,13 @@ async function getAllMessages(){
 
 async function getMessageByUsername(username){
   const user = messages.filter(function(element){
-     return element.user == this.username;
+    return element.user == this;
   },username)
-  if(!user){
+  if(user.length === 0){
     return {isSucess:false,error:"user not in database"}
-  }
-  return {isSucess:true,user:user}
-}
+    }
+    return {isSucess:true,user:user}
+ }
 
 async function addMessage(text,user){
     
