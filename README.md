@@ -1,4 +1,5 @@
 📝 Mini Message Board
+
 A simple message board application built with Express.js that allows users to view, search, and post messages. Currently uses mock data for demonstration purposes. 🚀
 
 ✨ Features
